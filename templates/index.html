@@ -1,0 +1,30 @@
+{% extends "partials/base.html" %}
+
+{% block content %}
+
+<div class="container text-center align-items-center justify-content-center" style="margin-top: 5em;">
+  <div id="alert-msg"></div>
+  <div class="shadow w-100 p-5">
+  <form method="POST" action="/create/" id="create_url">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-12 col-md-10" style="padding-left: 0;">
+          <label for="url" class="sr-only">Url</label>
+          <input type="text" class="form-control" name="url" id="url" value="{{ rvalues.url }}" style="width: 100%; height: 70px;" required placeholder="Url">
+          
+          <div class="text-left">
+            <span class="text-danger mt-5" id="url_status"></span>
+          </div>
+        </div>
+        <div class="col-12 col-md-2 mt-4 mt-md-0" style="padding-left: 0;">
+          <button type="submit" class="btn btn-primary mb-2" id="create_btn" style="width: 100%; height: 70px;">
+            Create
+          </button>
+      </div>
+      </div>
+  </form>
+  </div>
+
+
+</div>
+{% endblock %}

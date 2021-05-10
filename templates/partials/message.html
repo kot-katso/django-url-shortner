@@ -1,0 +1,13 @@
+{% if messages %}
+<ul class="list-group">
+    {% for message in messages %}
+
+    <div {% if message.tags %}class="alert alert-{{ message.tags }} list-item alert-dismissible fade show"{% endif %} role="alert">
+        <strong>Hey!</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+</ul>
+{% endif %}
